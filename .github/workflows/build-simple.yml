@@ -1,8 +1,8 @@
-name: Build Marlin Firmware
+name: Simple Build
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -10,29 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
     
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
     
-    - name: Install PlatformIO
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install platformio
     
-    - name: Build firmware for mks_robin_nano_v3
+    - name: Build MKS Robin Nano V3
       run: |
         platformio run -e mks_robin_nano_v3
     
-    - name: Upload firmware artifact
+    - name: Save artifact
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: firmware-mks_robin_nano_v3
+        name: firmware
         path: .pio/build/mks_robin_nano_v3/
-        retention-days: 30
-
-
-        path: .pio/build/${{ matrix.environment }}/Robin_nano_v3.bin
