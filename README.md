@@ -224,3 +224,4 @@ Use VSCode et PlatformIO for compilation (see [here](https://marlinfw.org/docs/b
 
 
 **Don't forget to reset EEPROM after flash !**
+# imprimante-3D
