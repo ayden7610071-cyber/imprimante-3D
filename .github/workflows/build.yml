@@ -49,3 +49,5 @@ jobs:
       with:
         name: firmware-release-${{ matrix.environment }}
         path: .pio/build/${{ matrix.environment }}/Robin_nano_v3.bin
+
+        path: .pio/build/${{ matrix.environment }}/Robin_nano_v3.bin
