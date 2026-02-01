@@ -10,8 +10,8 @@ set -e
 #
 # MKS Robin nano v3 Emulated DOGM TFT
 #
-use_example_configs "MKS Robin nano v3.0/Config example for suport sd card"
-exec_test $1 $2 "MKS Robin nano v3 Emulated DOGM TFT" "$3"
+use_example_configs "MKS Robin nano v3.0/Config example for suport sd card/Config example for Ender3(4988)"
+exec_test $1 $2 "MKS Robin nano v3 Ender3 4988" "$3"
 
 # cleanup
 restore_configs
